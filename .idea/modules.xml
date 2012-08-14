@@ -1,0 +1,8 @@
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea_modules/place-otm-build.iml" filepath="$PROJECT_DIR$/.idea_modules/place-otm-build.iml" ></module>
+      <module fileurl="file://$PROJECT_DIR$/.idea_modules/place-otm.iml" filepath="$PROJECT_DIR$/.idea_modules/place-otm.iml" ></module>
+    </modules>
+  </component>
+</project>
