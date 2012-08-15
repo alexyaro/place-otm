@@ -1,0 +1,7 @@
+@(user:User)
+
+@main("Hello World!") {
+   <h1>Hello my name is @user.username</h1>
+   <p>I was added on the @user.added.format("dd MMM yyyy")</p>
+   <p>My country is @user.address</p> <!-- how to show ONLY county from the address object -->
+}

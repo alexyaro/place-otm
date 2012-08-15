@@ -9,10 +9,15 @@ object ApplicationBuild extends Build {
 
     val appDependencies = Seq(
       // Add your project dependencies here,
+//      "com.mongodb.casbah" %% "casbah" % "2.1.5.0",
+//      "com.novus" %% "salat" % "0.0.8",
+      "se.radley" %% "play-plugins-salat" % "1.0.8"
     )
 
     val main = PlayProject(appName, appVersion, appDependencies, mainLang = SCALA).settings(
-      // Add your own project settings here      
+      // Add your own project settings here
+      routesImport += "se.radley.plugin.salat.Binders._",
+      templatesImport += "org.bson.types.ObjectId"
     )
 
 }
