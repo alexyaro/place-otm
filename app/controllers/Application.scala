@@ -8,34 +8,27 @@ import com.mongodb.casbah.Imports._
 import com.novus.salat._
 
 object Application extends Controller {
-  /*
-  def index = Action {
-    Ok(views.html.index("Hello World over HTTP."))
-  }*/
 
   def list() = Action {
-    val users = User.findAll
-    Ok(views.html.list(users))
+    val objects = OTMObject.findAll
+    Ok(views.html.list(objects))
   }
 
-  def listByCountry(country: String) = Action {
-    val users = User.findByCountry(country)
-    Ok(views.html.list(users))
-  }
-
-  def view(id: ObjectId) = Action {
-    User.findOneById(id).map( user =>
-      Ok(views.html.user(user))
+  def viewotm(id: ObjectId) = Action {
+    OTMObject.findOneById(id).map( otm =>
+      Ok(views.html.otm(otm))
     ).getOrElse(NotFound)
   }
 
-  def create(username: String) = Action {
-    val user = User(
-      username = username,
-      password = "1234"
+  /* TODO implement -> test
+  def create(nameObject: String, description: String, location: String) = Action {
+    val obj = OTMObject(
+      name = nameObject,
+      desc = description,
+      loc = location
     )
-    User.save(user)
-    Ok(views.html.user(user))
-  }
+    OTMObject.save(obj)
+    Ok(views.html.present_object(obj))
+  }*/
 
 }
